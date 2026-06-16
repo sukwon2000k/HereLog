@@ -13,28 +13,34 @@
     
     <div class="container">
         <div class="header">
-            <h2>여 기 록</h2>
+            <h2>ここログ</h2>
             <p>여기에 기록하는 이 순간</p>
         </div>
         <div class="mainBtn">
             <button class="start">시작하기</button>
-            <button class="btn" id="login">로그인</button>
-            <button class="btn" id="signup">회원가입</button>
         </div>
-
-        <div class="log">
-            <input type="text" id="id" placeholder="아이디를 입력하세요.">
-            <input type="password" id="pw" placeholder="비밀번호를 입력하세요.">
-            <input type="submit" value="로그인">
+        <div class="btn">
+            <button id="login">로그인</button>
+            <button id="signup">회원가입</button>
         </div>
-
-        <div class="sign">
-            <input type="text" id="name" placeholder="이름을 입력하세요.">
-            <input type="text" id="nickname" placeholder="별명을 입력하세요.">
-            <input type="text" id="id" placeholder="아이디를 입력하세요.">
-            <input type="password" id="pw" placeholder="비밀번호를 입력하세요.">
-            <input type="submit" value="로그인">
-        </div>
+        <form action="./board/login.php" method="post">
+            <div class="log">
+                <input class="input" name="id" type="text" id="id" placeholder="아이디를 입력하세요.">
+                <input class="input" name="pw" type="password" id="pw" placeholder="비밀번호를 입력하세요.">
+                <input type="submit" value="로그인">
+                <button class="backBtn"> ← </button>
+            </div>
+        </form>
+        <form action="./board/signup.php" method="post">
+            <div class="sign">
+                <input class="input" name="name" type="text" id="name" placeholder="이름을 입력하세요.">
+                <input class="input" name="nickname" type="text" id="nickname" placeholder="별명을 입력하세요.">
+                <input class="input" name="id" type="text" id="id" placeholder="아이디를 입력하세요.">
+                <input class="input" name="password" type="password" id="pw" placeholder="비밀번호를 입력하세요.">
+                <input type="submit" value="회원가입">
+                <button class="backBtn"> ← </button>
+            </div>
+        </form>
     </div>
     
 </body>

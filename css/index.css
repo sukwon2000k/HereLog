@@ -1,5 +1,9 @@
 @import url(./common.css);
 
+/* =========================
+   LAYOUT
+========================= */
+
 .container{
     height: 100vh;
     background-image: url(../src/image/map3.png);
@@ -10,104 +14,121 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 60px;
+
+    gap: clamp(30px, 6vh, 60px);
 }
+
+/* =========================
+   HEADER
+========================= */
+
 .header{
     text-align: center;
-    animation: fadeUp 0.8s ease;
-    transition: all 0.6s ease;
+    animation: fadeUp 0.6s ease;
 }
-.header{
-    transform: translateY(-100px);
-}
+
 @keyframes fadeUp{
     from{
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(-20px);
     }
     to{
         opacity: 1;
-        transform: translateY(-100px);
+        transform: translateY(-40px);
     }
 }
-.header>h2{
+
+.header h2{
     color: #183A5A;
-    font-size: 66px;
+    font-size: clamp(36px, 5vw, 66px);
     font-weight: 800;
     letter-spacing: 2px;
     text-shadow: 0 6px 20px rgba(24, 58, 90, 0.12);
 }
-.header>p{
+
+.header p{
     font-family: 'Cafe24 Ssurround', sans-serif;
-    font-size: 24px;
+    font-size: clamp(16px, 2.5vw, 24px);
     font-weight: 300;
     color: #5B6B7A;
 
     margin-top: 10px;
     letter-spacing: 1.5px;
-
     text-shadow: 0 4px 12px rgba(0,0,0,0.05);
 }
+
+/* =========================
+   BUTTON AREA
+========================= */
+
 .main_btn{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    min-height: 150px;
 }
 
+/* 로그인/회원가입 버튼 영역 */
 .btn{
     display: flex;
-    flex-direction: column; /* 👈 위아래로 쌓기 */
-    align-items: center;    /* 가운데 정렬 */
-    gap: 50px;              /* 버튼 간격 */
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+
     opacity: 0;
     visibility: hidden;
     transition: 0.5s;
-    flex-direction: row;
 }
 
-.show{
+/* 보여질 때 */
+.btn.show{
     opacity: 1;
     visibility: visible;
 }
-.start{
-    font-size: 20px;
-    padding: 16px 60px; 
-    font-weight: 600;
 
+/* =========================
+   START BUTTON
+========================= */
+
+.start{
+    font-size: clamp(16px, 2.5vw, 20px);
+    padding: clamp(12px, 2vw, 16px) clamp(40px, 6vw, 60px);
+
+    font-weight: 600;
     color: white;
+
     background: linear-gradient(135deg, #4FACFE, #00F2FE);
 
     border: none;
     border-radius: 30px;
 
     cursor: pointer;
-
     box-shadow: 0 8px 20px rgba(0, 168, 232, 0.3);
 
     transition: all 0.3s ease;
-    display: flex;
-    justify-content: center;
-    margin-top: 50px;
-
 }
+
 .start:hover{
     transform: translateY(-6px);
     box-shadow: 0 12px 25px rgba(0, 168, 232, 0.4);
 }
+
 .start:active{
     transform: scale(0.97);
 }
+
+/* =========================
+   AUTH BUTTONS
+========================= */
+
 #login, #signup{
-    font-size: 18px;
-    padding: 14px 40px;
-    font-weight: 600;
+    font-size: clamp(14px, 2vw, 18px);
+    width: clamp(160px, 30vw, 200px);
+
+    padding: 14px 0;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 200px;          /* 👈 핵심 (같은 너비 강제) */
 
     color: white;
     background: linear-gradient(135deg, #4FACFE, #00F2FE);
@@ -116,11 +137,11 @@
     border-radius: 30px;
 
     cursor: pointer;
-
     box-shadow: 0 8px 20px rgba(0, 168, 232, 0.3);
 
     transition: all 0.3s ease;
 }
+
 #login:hover,
 #signup:hover{
     transform: translateY(-6px);
@@ -131,6 +152,98 @@
 #signup:active{
     transform: scale(0.97);
 }
-#login{
-    margin-bottom: 15px;
+
+/* =========================
+   LOGIN / SIGNUP FORM
+========================= */
+
+.log, .sign{
+    display: none;
+    flex-direction: column;
+    gap: 12px;
+    align-items: center;
+
+    margin-top: -20px;
+}
+
+/* 활성화 */
+.log.show, .sign.show{
+    display: flex;
+}
+
+/* =========================
+   INPUT STYLE
+========================= */
+
+.input{
+    width: 280px;
+    padding: 14px 18px;
+
+    font-size: 15px;
+    color: #183A5A;
+
+    background: rgba(255, 255, 255, 0.75);
+    backdrop-filter: blur(10px);
+
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 14px;
+
+    outline: none;
+
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+
+    transition: all 0.25s ease;
+}
+
+.input:focus{
+    border: 1px solid #4FACFE;
+    box-shadow: 0 0 0 3px rgba(79, 172, 254, 0.25);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.input::placeholder{
+    color: #8aa0b3;
+    font-size: 14px;
+}
+
+/* submit 버튼 */
+.log input[type="submit"],
+.sign input[type="submit"]{
+    width: 280px;
+    padding: 14px;
+
+    border: none;
+    border-radius: 14px;
+
+    background: linear-gradient(135deg, #4FACFE, #00F2FE);
+    color: white;
+
+    font-weight: 600;
+    cursor: pointer;
+
+    box-shadow: 0 8px 20px rgba(0, 168, 232, 0.3);
+    transition: 0.3s;
+}
+
+.log input[type="submit"]:hover,
+.sign input[type="submit"]:hover{
+    transform: translateY(-3px);
+}
+
+.backBtn{
+    margin-top: 10px;
+
+    background: transparent;
+    border: none;
+
+    color: #4FACFE;
+    font-size: 14px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.backBtn:hover{
+    transform: translateY(-2px);
+    color: #1E88E5;
 }
