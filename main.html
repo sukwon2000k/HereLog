@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="./css/main.css">
+    <script src="./js/main.js" defer></script>
+</head>
+<body>
+
+    <div class="container">
+        <div id="header">
+            <div class="logo">
+            <h1>
+            ここログ
+            <span>HereLog</span>
+            </h1>
+            </div>
+            <button class="headerBtn" id="info">내정보</button>
+        </div>
+        <div class="gallery">
+
+            <!-- 새 방 만들기 -->
+            <div class="album create-room">
+                <span>+</span>
+                <p>새 방 만들기</p>
+            </div>
+
+            <div class="create-box">
+            <input type="text" id="room-name" placeholder="방 이름">
+            <input type="text" id="room-code" placeholder="초대 코드 (선택)">
+            <button id="createBtn">방 생성</button>
+            <button id="cancelBtn">취소</button>
+            </div>
+
+            <!-- 방들이 들어갈 영역 (임시로 넣어둠)-->
+            <div id="roomList">
+                <div class="album">
+        <img src="./src/image/japan.jpeg">
+
+        <div class="album-info">
+            <h3>제주여행</h3>
+            <p>📸 23장</p>
+        </div>
+        </div>
+
+        <div class="album">
+        <img src="./src/image/mountain.png">
+
+        <div class="album-info">
+            <h3>부산여행</h3>
+            <p>📸 12장</p>
+            </div>
+
+        </div>
+
+    </div>
+    
+</body>
+</html>

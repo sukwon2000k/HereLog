@@ -1,0 +1,193 @@
+@import url('./common.css');
+
+/* =========================
+   LAYOUT
+========================= */
+
+.container{
+    min-height: 100vh;
+
+    background-image: url('../src/image/background.png');
+    background-size: cover;
+    background-position: center;
+
+    padding: 20px;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+#header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.headerBtn{
+    border: none;
+    border-radius: 20px;
+
+    padding: 12px 20px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+
+    color: #183A5A;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+/* =========================
+   GALLERY
+========================= */
+
+.gallery{
+    width: 100%;
+    max-width: 400px;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+
+    margin: 0 auto;
+}
+
+
+/* =========================
+   ALBUM CARD
+========================= */
+
+.album{
+    aspect-ratio: 1 / 1;   /* 정사각형 */
+    border-radius: 20px;
+    overflow: hidden;
+
+    background: rgba(255,255,255,0.78);
+    backdrop-filter: blur(12px);
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+
+    position: relative;
+    cursor: pointer;
+
+    transition: .3s;
+}
+
+.album:hover{
+    transform: translateY(-3px);
+}
+
+.album img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.album-info{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    padding: 12px;
+
+    color: white;
+
+    background: linear-gradient(
+        transparent,
+        rgba(0,0,0,0.55)
+    );
+}
+
+.album-info h3{
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.album-info p{
+    font-size: 12px;
+}
+
+/* =========================
+   CREATE ROOM
+========================= */
+
+.create-room{
+    aspect-ratio: 1 / 1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px dashed rgba(24,58,90,.25);
+
+    background: rgba(255,255,255,.55);
+
+    color: #183A5A;
+}
+
+.create-room span{
+    font-size: 60px;
+    line-height: 1;
+}
+
+.create-room p{
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+/* =========================
+   ROOM LIST
+========================= */
+
+#roomList{
+    display: contents;
+}
+
+.logo h1{
+    display:flex;
+    flex-direction:column;
+
+    color:#183A5A;
+    font-size:34px;
+}
+
+.logo h1 span{
+    font-size:13px;
+    font-weight:400;
+
+    color:#6B7280;
+    text-align: center;
+    letter-spacing:3px;
+}
+
+.create-box{
+    display:none;
+
+    width: 320px;
+    margin: 20px auto 30px;
+
+    padding: 20px;
+
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(12px);
+
+    border-radius: 24px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.08);
+}
+
+.create-box.show{
+    display:flex;
+    flex-direction:column;
+    gap:12px;
+}
