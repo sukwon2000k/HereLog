@@ -1,0 +1,259 @@
+@import url(./common.css);
+
+
+body{
+    min-height:100vh;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background-image:url('../src/image/background.png');
+    background-size:cover;
+    background-position:center;
+
+    font-family:sans-serif;
+}
+
+/* =========================
+   APP CONTAINER
+========================= */
+
+.container{
+    width:100%;
+    max-width:420px;
+    height:100vh;
+
+    display:flex;
+    flex-direction:column;
+
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(12px);
+
+    overflow:hidden;
+}
+
+/* =========================
+   HEADER
+========================= */
+
+#header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    padding:18px 20px;
+
+    background:rgba(255,255,255,.65);
+    backdrop-filter:blur(15px);
+
+    box-shadow:0 4px 15px rgba(0,0,0,.05);
+
+    z-index:10;
+}
+
+.room-title{
+    font-size:22px;
+    font-weight:700;
+    color:#183A5A;
+}
+
+.room-title span{
+    display:block;
+    font-size:11px;
+    color:#6B7280;
+    letter-spacing:2px;
+}
+
+.headerBtn{
+    border:none;
+    background:none;
+
+    width:auto;
+    height:auto;
+
+    padding:8px;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:none;
+
+    transition:.2s;
+}
+
+.headerBtn:hover{
+    transform:scale(1.1);
+}
+
+
+
+/* 채팅 */
+
+.chatBtn{
+    position:relative;
+
+    font-size:25px;
+}
+
+/* 알림 점 */
+
+.chatBtn::after{
+    content:"";
+
+    position:absolute;
+
+    top:10px;
+    right:10px;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#4FACFE;
+
+    box-shadow:
+    0 0 10px rgba(79,172,254,.6);
+}
+
+/* =========================
+   MAP
+========================= */
+
+#map{
+    flex:1;
+
+    border-radius:24px 24px 0 0;
+
+    overflow:hidden;
+
+    margin:12px 12px 0;
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,.08);
+
+    position:relative;
+}
+
+/* =========================
+   FLOAT BUTTON
+========================= */
+
+.add-photo{
+    position:absolute;
+
+    right:20px;
+    bottom:50px;
+
+    width:64px;
+    height:64px;
+
+    border:none;
+    border-radius:50%;
+
+    background:linear-gradient(
+        135deg,
+        #4FACFE,
+        #00F2FE
+    );
+
+    color:white;
+    font-size:38px;
+    font-weight:300;
+
+    cursor:pointer;
+
+    box-shadow:
+        0 10px 25px rgba(0,168,232,.35);
+
+    transition:.3s;
+
+    z-index:100;
+}
+.add-photo:hover{
+    transform:
+        translateY(-4px)
+        scale(1.05);
+}
+
+.add-photo:active{
+    transform:scale(.95);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+#footer{
+    padding:18px;
+
+    background:rgba(255,255,255,.7);
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 -4px 15px rgba(0,0,0,.05);
+}
+
+.footer-title{
+    font-size:14px;
+    font-weight:700;
+
+    color:#183A5A;
+
+    margin-bottom:12px;
+}
+
+/* =========================
+   PROFILES
+========================= */
+
+.profile-list{
+    display:flex;
+    align-items:center;
+
+    gap:12px;
+}
+
+.profile-circle{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    overflow:hidden;
+
+    background:white;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.08);
+}
+
+.profile-circle img{
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+}
+
+.profile-add{
+    width:52px;
+    height:52px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:rgba(255,255,255,.8);
+
+    color:#183A5A;
+    font-size:24px;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 4px 12px rgba(0,0,0,.08);
+}

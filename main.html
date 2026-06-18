@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HereLog</title>
 
     <link rel="stylesheet" href="./css/main.css">
     <script src="./js/main.js" defer></script>
@@ -31,13 +31,13 @@
             <!-- 방들이 들어갈 영역 (임시로 넣어둠)-->
             <div id="roomList">
                 <div class="album">
-        <img src="./src/image/japan.jpeg">
+                    <img src="./src/image/japan.jpeg">
 
-        <div class="album-info">
-            <h3>제주여행</h3>
-            <p>📸 23장</p>
-        </div>
-        </div>
+                    <div class="album-info">
+                        <h3>제주여행</h3>
+                        <p>📸 23장</p>
+                    </div>
+                </div>
 
         <div class="album">
         <img src="./src/image/mountain.png">
@@ -53,7 +53,15 @@
     <div class="create-box">
         <!-- <form action="./board/main.php" method="post"> -->
             <input type="text" id="room-name" placeholder="방 이름">
-            <input type="text" id="room-code" placeholder="초대 코드 (선택)">
+            <input type="file"
+            id="room-img"
+            accept="image/*"
+            onchange="changeImg()">
+
+            <label for="room-img" class="upload-btn">
+            📷 대표 이미지 선택
+            </label>
+            <img src="" alt="" id="preimg" style="max-width: 400px; max-height: 400px;">
             <button id="createBtn">방 생성</button>
             <button id="cancelBtn">취소</button>
         <!-- </form> -->

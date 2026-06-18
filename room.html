@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HereLog</title>
+
+    <link rel="stylesheet" href="./css/room.css">
+
+    <!-- 실제 지도를 불러오는 작업을 수행하는 카카오의 지도 api 라이브러리 적용(외부 스크립트) : 발급받은 자바스크립트 키 를 등록-->
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b995ce9beb583c59c83fea479f81d637"></script>
+
+    <!-- 지도를 띄우는 코드 작성(외부 스크립트) defer:지연 -->
+    <script src="./js/room.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <div id="header">
+            <button class="headerBtn backBtn" id="backBtn">⬅️</button>
+            <div class="room-title">
+                제주여행
+                <span>HERELOG</span>
+            </div>
+            <button class="headerBtn chatBtn" id="chat">✉️</button>
+        </div>
+
+        <div id="map">
+            <button class="add-photo">+</button>
+        </div>
+
+        <div id="footer">
+            <!-- 멤버들 프로필 -->
+            <div class="footer-title">참여자 4명</div>
+            <div class="profile-list">
+                <div class="profile-circle"></div>
+                <div class="profile-circle"></div>
+                <div class="profile-circle"></div>
+                
+                <div class="profile-add">+</div>
+            </div>
+        </div>
+    </div>
+
+    
+</body>
+</html>
